@@ -29,7 +29,6 @@ UnbufferedSerial uartUsb(USBTX, USBRX, 115200);
 
 int introComplete = false; // Tracks whether the welcome message for the driver
                            // has been displayed
-int commandNum[] = {0, 1, 2};
 
 //=====[Declarations (prototypes) of public functions]=========================
 
@@ -117,7 +116,7 @@ void driverIntroduction() {
 prints the introduction string in uart when the driver is first present
 */
 void uartCommands(int i) {
-  switch (commandNum[i]) {
+  switch (i) {
   case 0:
     uartUsb.write("\nWelcome to enhanced alarm system model 218-W24", 46);
     break;
